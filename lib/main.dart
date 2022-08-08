@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'tab_bar_pages/home_page.dart';
+import 'utils/color_util.dart';
 
 void main() {
   runApp(const MyApp());
@@ -126,6 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: currentPage,
       bottomNavigationBar: BottomNavigationBar(
+        // backgroundColor: ColorHex.fromHex("#784DFA"),
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         items: _bottomTabs,
@@ -135,6 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
             currentPage = _tabs[currentIndex];
           });
         },
+        fixedColor: ColorHex.fromHex('#784DFA'),
       ),
     );
   }

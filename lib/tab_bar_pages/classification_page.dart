@@ -10,7 +10,7 @@ class Classification extends StatefulWidget {
 class _ClassificationPageState extends State<Classification> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Text("分类"),
       ),

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class Mine extends StatefulWidget {
@@ -12,7 +14,7 @@ class _MinePageState extends State<Mine> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("我的"),
+        child: const Text("我的"),
       ),
     );
   }

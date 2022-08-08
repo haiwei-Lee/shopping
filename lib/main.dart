@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'tab_bar_pages/home_page.dart';
+import 'tab_bar_pages/classification_page.dart';
+import 'tab_bar_pages/shopping_cart_page.dart';
+import 'tab_bar_pages/mine_page.dart';
 import 'utils/color_util.dart';
 
 void main() {
@@ -54,7 +57,12 @@ var currentPage;
 
 var currentIndex = 0;
 
-final List _tabs = [const Home(), const Home(), const Home(), const Home()];
+final List _tabs = [
+  const Home(),
+  const Classification(),
+  const ShoppingCart(),
+  const Mine()
+];
 
 final List<BottomNavigationBarItem> _bottomTabs = [
   BottomNavigationBarItem(
@@ -127,7 +135,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: currentPage,
       bottomNavigationBar: BottomNavigationBar(
-        // backgroundColor: ColorHex.fromHex("#784DFA"),
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         items: _bottomTabs,

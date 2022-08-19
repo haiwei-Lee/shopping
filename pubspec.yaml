@@ -72,6 +72,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - images/bg_maierfanyi.png
     - images/icon_tabbar_cart_nor.png
     - images/icon_tabbar_cart_sel.png
     - images/icon_tabbar_classify_nor.png

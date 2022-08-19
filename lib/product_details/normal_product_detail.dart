@@ -1,5 +1,7 @@
 import 'package:banner_image/banner_image.dart';
+import 'package:biyao_shopping/product_details/banner_widget.dart';
 import 'package:biyao_shopping/product_details/photo_preview.dart';
+import 'package:biyao_shopping/product_details/product_detail_info.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -27,47 +29,12 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    var stack = Stack(
-      alignment: const Alignment(0.9, 0.7),
-      children: [
-        BannerImage(
-          itemLength: _imageList.length,
-          imageUrlList: _imageList,
-          autoPlay: true,
-          padding: const EdgeInsets.all(0),
-          withOutIndicator: true,
-          timerDuration: const Duration(seconds: 3),
-          onTap: (index) {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (_) => PhotoPreview(
-                          galleryItems: _imageList,
-                          defaultImageIndex: index,
-                        )));
-          },
-          onPageChanged: (index) {
-            setState(() {
-              _currentIndex = index + 1;
-            });
-          },
-        ),
-        Container(
-          decoration: const BoxDecoration(
-            color: Colors.white,
-          ),
-          height: 20,
-          padding: const EdgeInsets.all(2),
-          child: Text('$_currentIndex/${_imageList.length}'),
-        ),
-      ],
-    );
-
     return Scaffold(
         body: Column(
       children: [
-        stack,
+        ProductBanner(imageItems: _imageList),
         const SizedBox(height: 10),
+        ProductInfoView(),
       ],
     ));
   }

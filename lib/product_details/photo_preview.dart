@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view_gallery.dart';
+import '../utils/color_util.dart';
 
 typedef PageChanged = void Function(int index);
 
@@ -68,6 +69,20 @@ class _PhotoPreviewState extends State<PhotoPreview> {
             child: Text(
               '$tempSelect/${widget.galleryItems.length}',
               style: const TextStyle(color: Colors.black),
+            ),
+          ),
+          Positioned(
+            left: 150,
+            bottom: 100,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.resolveWith(
+                    (states) => ColorHex.fromHex('#784DFA')),
+              ),
+              child: const Text('点击我'),
             ),
           ),
         ],

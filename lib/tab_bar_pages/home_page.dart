@@ -2,6 +2,7 @@
 
 import 'package:biyao_shopping/utils/color_util.dart';
 import 'package:flutter/material.dart';
+import 'package:biyao_shopping/home/home_list_view.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -52,15 +53,15 @@ class _HomePageState extends State<Home> {
           ),
         ),
         // ignore: prefer_const_literals_to_create_immutables
-        // body: TabBarView(children: <Widget>[
-        //   Home(),
-        //   Home(),
-        //   Home(),
-        //   Home(),
-        //   Home(),
-        //   Home(),
-        //   Home()
-        // ]),
+        body: TabBarView(children: <Widget>[
+          HomeList(),
+          HomeList(),
+          HomeList(),
+          HomeList(),
+          HomeList(),
+          HomeList(),
+          HomeList()
+        ]),
       ),
     );
   }

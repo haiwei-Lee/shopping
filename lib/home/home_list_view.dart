@@ -1,3 +1,4 @@
+import 'package:biyao_shopping/comment/comment_list_page.dart';
 import 'package:biyao_shopping/product_details/normal_product_detail.dart';
 import 'package:flutter/material.dart';
 
@@ -30,10 +31,10 @@ class _HomeListState extends State<HomeList> {
   }
 
   void _checkItem(int index) {
-    print(index);
+    bool indexType = (index % 2 == 0);
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (BuildContext context) {
-      return ProductDetailsPage();
+      return indexType ? CommentListPage() : ProductDetailsPage();
     }));
   }
 }
